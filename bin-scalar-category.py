@@ -11,10 +11,16 @@ np.linspace(20, 70, num=11) ifadesi, 20 ile 70 arasında (dahil) eşit aralıkl�
 Bu değerler, yaş aralıklarının sınırlarını temsil eder. Örneğin, [20, 25, 30, 35, ..., 65, 70]
 gibi bir dizi oluşturulur.
 
-    pd.cut() fonksiyonu, veri kümesindeki belirli bir sütunu (bu durumda YEARS_BIRTH) ve belirli aralıkları (bu durumda bins) kullanarak kesitlere ayırır.
+pd.cut() fonksiyonu, veri kümesindeki belirli bir sütunu (bu durumda YEARS_BIRTH) ve belirli
+aralıkları (bu durumda bins) kullanarak kesitlere ayırır.
 
-    age_data['YEARS_BIRTH'] ifadesi, age_data veri kümesindeki YEARS_BIRTH sütununa erişim sağlar.
+age_data['YEARS_BIRTH'] ifadesi, age_data veri kümesindeki YEARS_BIRTH sütununa erişim sağlar.
 
-    bins parametresine önceden belirlenmiş aralıklar (yaş kesitleri) verilir. Bu aralıklar, yaş değerlerinin sınıflandırılacağı aralıkları temsil eder.
-
+bins parametresine önceden belirlenmiş aralıklar (yaş kesitleri) verilir.
+Bu aralıklar, yaş değerlerinin sınıflandırılacağı aralıkları temsil eder.
 """
+
+
+# Group by the bin and calculate averages
+age_groups  = age_data.groupby('YEARS_BINNED').mean()
+age_groups
